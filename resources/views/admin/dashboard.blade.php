@@ -32,19 +32,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-xl-3">
-            <div class="card border-0 shadow-sm rounded-4 p-3 h-100">
-                <div class="d-flex align-items-center">
-                    <div class="icon-shape bg-success-subtle">
-                        <i class="bi bi-graph-up-arrow fs-3"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="text-muted mb-1 small uppercase fw-bold">Visite</h6>
-                        <h4 class="fw-bold mb-0">1.2k</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <h4 class="fw-bold mb-4 px-1">Azioni Rapide</h4>
