@@ -20,7 +20,7 @@ class ProjectstableSeeder extends Seeder
             $project->client = $faker->company();
             $project->period = $faker->randomElement(['3 mesi', '2023-2024', 'In corso', '6 mesi']);
             $project->summary = $faker->paragraph();
-            $project->type = $faker->randomElement(['Front-end', 'Back-end', 'Full-stack', 'Mobile App']);
+            $project->type = $faker->randomElement(['Front-end', 'Back-end', 'Full-stack']);
             $project->save();
         }
     }

@@ -22,11 +22,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.projects.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.projects.index') ? 'active' : 'text-white' }}">
+                        <i class="bi bi-person me-2"></i> Progetti
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('profile.edit') }}"
                         class="nav-link {{ request()->routeIs('profile.edit') ? 'active' : 'text-white' }}">
                         <i class="bi bi-person me-2"></i> Profilo
                     </a>
                 </li>
+
             </ul>
 
             <hr class="text-white-50">

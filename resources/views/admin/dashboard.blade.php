@@ -44,7 +44,7 @@
                     <h5 class="fw-bold mb-2">Progetti</h5>
                     <p class="text-muted small">Crea e modifica i lavori che i visitatori vedranno sul sito.</p>
                     <div class="mt-auto pt-4">
-                        <a href="#" class="btn btn-primary w-100 rounded-pill py-2">
+                        <a href="{{route('admin.projects.index')}}" class="btn btn-primary w-100 rounded-pill py-2">
                             Gestisci <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -72,7 +72,7 @@
                     <h5 class="fw-bold mb-2">Sito Pubblico</h5>
                     <p class="text-muted small">Vedi l'anteprima del tuo portfolio come un utente esterno.</p>
                     <div class="mt-auto pt-4">
-                        <a href="{{ url('/') }}" target="_blank" class="btn btn-outline-info w-100 rounded-pill py-2 fw-bold">
+                        <a href="{{ route('welcome') }}" target="_blank" class="btn btn-outline-info w-100 rounded-pill py-2 fw-bold">
                             Visualizza <i class="bi bi-box-arrow-up-right ms-1"></i>
                         </a>
                     </div>
