@@ -19,8 +19,8 @@ class ProjectstableSeeder extends Seeder
             $project->slug = Str::slug($project->title, '-');
             $project->client = $faker->company();
             $project->period = $faker->randomElement(['3 mesi', '2023-2024', 'In corso', '6 mesi']);
+            $project->type_id = $faker->numberBetween(1, 3);
             $project->summary = $faker->paragraph();
-            $project->type = $faker->randomElement(['Front-end', 'Back-end', 'Full-stack']);
             $project->save();
         }
     }

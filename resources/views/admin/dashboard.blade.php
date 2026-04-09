@@ -27,7 +27,7 @@
                     </div>
                     <div class="ms-3">
                         <h6 class="text-muted mb-1 small uppercase fw-bold">Progetti</h6>
-                        <h4 class="fw-bold mb-0">12</h4>
+                        <h4 class="fw-bold mb-0">{{$length}}</h4>
                     </div>
                 </div>
             </div>

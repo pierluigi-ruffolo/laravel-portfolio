@@ -54,7 +54,6 @@
                                 </div>
                             </td>
                         </tr>
-
                         <div class="modal fade" id="modal-{{$project->id}}" tabindex="-1" aria-labelledby="modalLabel-{{$project->id}}" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content shadow border-0">
@@ -63,17 +62,14 @@
                                         <h1 class="modal-title fs-5 fw-bold text-dark" id="modalLabel-{{$project->id}}">Conferma Eliminazione</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-
                                     <div class="modal-body py-4">
                                         <p class="text-muted mb-0">
                                             Sei sicuro di voler eliminare definitivamente <strong>{{$project->title}}</strong>? <br>
                                             <span class="text-danger fw-semibold">L'azione non può essere annullata.</span>
                                         </p>
                                     </div>
-
                                     <div class="modal-footer border-0 pt-0">
                                         <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Annulla</button>
-
                                         <form action="{{ route('admin.projects.destroy', $project) }}" method="POST" class="d-inline-block">
                                             @csrf
                                             @method('DELETE')
