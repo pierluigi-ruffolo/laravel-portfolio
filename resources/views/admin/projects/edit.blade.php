@@ -32,10 +32,9 @@
                             <div class="col-md-6">
                                 <label for="type" class="form-label fw-bold">Tipo di Progetto</label>
                                 <select class="form-select" id="type" name="type">
-                                    <option selected disabled>Scegli...</option>
-                                    <option value="Front-end" {{ $project->type == 'Front-end' ? 'selected' : '' }}>Front-end</option>
-                                    <option value="Back-end" {{ $project->type == 'Back-end' ? 'selected' : '' }}>Back-end</option>
-                                    <option value="Full-stack" {{ $project->type == 'Full-stack' ? 'selected' : '' }}>Full-stack</option>
+                                    @foreach ($types as $type)
+                                    <option value="{{$type->id}}">{{$type->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-md-12">

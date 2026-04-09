@@ -22,7 +22,7 @@
             <div class="border-bottom pb-3 mb-4">
                 <h1 class="display-5 fw-bold text-dark">{{ $project->title }}</h1>
                 <div class="d-flex gap-3 text-muted">
-                    <span><strong>Tipo:</strong> {{ $project->type }}</span>
+                    <span><strong>Tipo:</strong> {{ $project->type['name'] }}</span>
                     <span>|</span>
                     <span><strong>Cliente:</strong> {{ $project->client }}</span>
                 </div>

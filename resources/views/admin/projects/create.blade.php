@@ -11,7 +11,6 @@
                     Annulla
                 </a>
             </div>
-
             <div class="card border-0 shadow-sm rounded-4">
                 <div class="card-body p-4">
                     <form action="{{ route('admin.projects.store') }}" method="POST">
@@ -36,10 +35,9 @@
                             <div class="col-md-6">
                                 <label for="type" class="form-label fw-bold">Tipo di Progetto</label>
                                 <select class="form-select" id="type" name="type">
-                                    <option selected disabled>Scegli...</option>
-                                    <option value="Front-end">Front-end</option>
-                                    <option value="Back-end">Back-end</option>
-                                    <option value="Full-stack">Full-stack</option>
+                                    @foreach ($types as $type)
+                                    <option value="{{$type->id}}">{{$type->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-md-12">

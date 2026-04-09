@@ -25,15 +25,14 @@
                         @foreach ($projects as $project)
                         @php
                         $type = "";
-                        if ($project->type === "Front-end") {
+                        if ($project->type['name'] === "Front-end") {
                         $type = "bg-info-subtle text-info";
-                        } else if ($project->type === "Back-end") {
+                        } else if ($project->type['name'] === "Back-end") {
                         $type = "bg-danger-subtle text-danger";
                         } else {
                         $type = "bg-success-subtle text-success";
                         }
                         @endphp
-
                         <tr>
                             <td class="ps-4 text-muted">{{$project->id}}</td>
                             <td>
@@ -42,7 +41,7 @@
                             </td>
                             <td>{{$project->client}}</td>
                             <td>{{$project->period}}</td>
-                            <td><span class="badge {{$type}}">{{$project->type}}</span></td>
+                            <td><span class="badge {{$type}}">{{$project->type['name']}}</span></td>
                             <td class="text-end pe-4">
                                 <div class="btn-group shadow-sm rounded">
                                     <a href="{{route('admin.projects.show', $project)}}" class="btn btn-sm btn-outline-secondary" title="Vedi"><i class="bi bi-eye"></i></a>
