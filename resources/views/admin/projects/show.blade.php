@@ -8,7 +8,6 @@
                 <a href="{{ route('admin.projects.index') }}" class="btn btn-outline-secondary rounded-pill px-3">
                     <i class="bi bi-arrow-left me-1"></i> Lista Progetti
                 </a>
-
                 <div class="d-flex gap-2">
                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning text-white rounded-pill px-3">
                         <i class="bi bi-pencil me-1"></i> Modifica
@@ -22,12 +21,11 @@
             <div class="border-bottom pb-3 mb-4">
                 <h1 class="display-5 fw-bold text-dark">{{ $project->title }}</h1>
                 <div class="d-flex gap-3 text-muted">
-                    <span><strong>Tipo:</strong> {{ $project->type['name'] }}</span>
+                    <span><strong>Tipo:</strong> {{ $project->type?->name ?? "Nessuna tipologia" }}</span>
                     <span>|</span>
                     <span><strong>Cliente:</strong> {{ $project->client }}</span>
                 </div>
             </div>
-
             <div class="row mb-5">
                 <div class="col-12">
                     <h5 class="text-uppercase small fw-bold text-secondary mb-3">Descrizione del progetto</h5>
@@ -53,7 +51,6 @@
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content shadow border-0">

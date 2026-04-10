@@ -23,16 +23,6 @@
                     </thead>
                     <tbody>
                         @foreach ($projects as $project)
-                        @php
-                        $type = "";
-                        if ($project->type['name'] === "Front-end") {
-                        $type = "bg-info-subtle text-info";
-                        } else if ($project->type['name'] === "Back-end") {
-                        $type = "bg-danger-subtle text-danger";
-                        } else {
-                        $type = "bg-success-subtle text-success";
-                        }
-                        @endphp
                         <tr>
                             <td class="ps-4 text-muted">{{$project->id}}</td>
                             <td>
@@ -41,7 +31,15 @@
                             </td>
                             <td>{{$project->client}}</td>
                             <td>{{$project->period}}</td>
-                            <td><span class="badge {{$type}}">{{$project->type['name']}}</span></td>
+                            <td>
+                                @if($project->type)
+                                <span class="badge rounded-pill px-3 py-2 shadow-sm bg-primary-subtle text-primary border border-primary-subtle">
+                                    {{ $project->type->name }}
+                                </span>
+                                @else
+                                <span class="badge rounded-pill px-3 py-2 bg-light text-secondary border border-light-subtle">Nessuna tipologia</span>
+                                @endif
+                            </td>
                             <td class="text-end pe-4">
                                 <div class="btn-group shadow-sm rounded">
                                     <a href="{{route('admin.projects.show', $project)}}" class="btn btn-sm btn-outline-secondary" title="Vedi"><i class="bi bi-eye"></i></a>
