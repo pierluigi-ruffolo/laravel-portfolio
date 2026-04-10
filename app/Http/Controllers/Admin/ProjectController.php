@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -22,12 +23,14 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
 
     public function store(Request $request)
     {
+
         $data = $request->all();
         $newProject = new Project();
         $newProject->title = $data['title'];
@@ -35,8 +38,13 @@ class ProjectController extends Controller
         $newProject->client = $data['client'];
         $newProject->period = $data['period'];
         $newProject->summary = $data['summary'];
-        $newProject->type_id = $data['type'];
+        $newProject->type_id = $data['type_id'];
         $newProject->save();
+
+        if ($request->has('technologies')) {
+            $newProject->technologies()->attach($request->technologies);
+        }
+
         return redirect()->route('admin.projects.index');
     }
 
@@ -51,7 +59,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
 
@@ -67,6 +76,12 @@ class ProjectController extends Controller
         $project->summary = $data['summary'];
         $project->type_id = $data['type'];
         $project->update();
+
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->technologies);
+        } else {
+            $project->technologies()->detach();
+        }
         return redirect()->route('admin.projects.show', $project);
     }
 

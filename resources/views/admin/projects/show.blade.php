@@ -12,7 +12,6 @@
                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning text-white rounded-pill px-3">
                         <i class="bi bi-pencil me-1"></i> Modifica
                     </a>
-
                     <button type="button" class="btn btn-danger rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="bi bi-trash me-1"></i> Elimina
                     </button>
@@ -24,6 +23,15 @@
                     <span><strong>Tipo:</strong> {{ $project->type?->name ?? "Nessuna tipologia" }}</span>
                     <span>|</span>
                     <span><strong>Cliente:</strong> {{ $project->client }}</span>
+                </div>
+                <div class="mt-3">
+                    @forelse($project->technologies as $technology)
+                    <span class="badge" style="background-color: {{ $technology->color}}">
+                        {{ $technology->name }}
+                    </span>
+                    @empty
+                    <span class="text-muted">Nessuna tecnologia specificata</span>
+                    @endforelse
                 </div>
             </div>
             <div class="row mb-5">
