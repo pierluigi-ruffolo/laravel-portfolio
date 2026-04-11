@@ -37,7 +37,6 @@
                             <div class="col-12">
                                 <label for="type_id" class="form-label fw-bold">Tipo di Progetto</label>
                                 <select class="form-select border-2" id="type_id" name="type_id">
-                                    <option value="" selected disabled>Seleziona una tipologia...</option>
                                     @foreach ($types as $type)
                                     <option value="{{$type->id}}">{{$type->name}}</option>
                                     @endforeach

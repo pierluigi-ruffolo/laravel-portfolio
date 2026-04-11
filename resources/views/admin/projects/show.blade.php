@@ -26,7 +26,7 @@
                 </div>
                 <div class="mt-3">
                     @forelse($project->technologies as $technology)
-                    <span class="badge" style="background-color: {{ $technology->color}}">
+                    <span class="badge" style="background-color: {{ $technology->color }};">
                         {{ $technology->name }}
                     </span>
                     @empty

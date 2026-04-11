@@ -34,6 +34,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.technologies.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.technologies.index') ? 'active' : 'text-white' }}">
+                        <i class="bi bi-person me-2"></i> Tecnologie
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('profile.edit') }}"
                         class="nav-link {{ request()->routeIs('profile.edit') ? 'active' : 'text-white' }}">
                         <i class="bi bi-person me-2"></i> Profilo

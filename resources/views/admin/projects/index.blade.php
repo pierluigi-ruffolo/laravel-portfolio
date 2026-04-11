@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-fluid py-4">
+<div class="container-fluid pt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold">Gestione Progetti</h2>
         <a href="{{route('admin.projects.create')}}" class="btn btn-primary rounded-pill px-3">
